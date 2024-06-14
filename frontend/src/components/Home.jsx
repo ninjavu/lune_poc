@@ -21,8 +21,7 @@ export const Home = () => {
   return (
     <>
       <h1> Movies </h1>
-      <input vale={actorFilter} onChange={ (e) => setActorFilter(e.target.value) } />
-
+      <input placeholder='filter by actor' value={actorFilter} onChange={ (e) => setActorFilter(e.target.value) } />
       
         <>{ isLoading ? <Loader/> : 
           movies.length == 0 ? <h2>No movies</h2> :
