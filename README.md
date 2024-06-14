@@ -1,5 +1,7 @@
 Welcome, it's luna task
 
+Technologies used: Ruby, RoR, React, Docker.
+
 Application is fully dockerized, for launch please:
 
 1. cp .env.sample .env
