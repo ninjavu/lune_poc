@@ -3,7 +3,11 @@ import { API_URL } from 'config/constants'
 
 const index = (actor) => {
   const query = () => {
-    return fetch(`${API_URL}/movies?actor=${actor}`, {
+    const url = new URL(`${API_URL}/movies`)
+
+    actor && url.searchParams.append('actor', actor)
+
+    return fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

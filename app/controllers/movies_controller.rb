@@ -2,19 +2,9 @@
 
 class MoviesController < ApplicationController
   def index
-    # [TODO] Add index for actor.
-    # [TODO] Move logic to service.
-    # [TODO] Use pagination component in React.
-    # [TODO] Use debounce in order to avoid highload.
-
-    filter = { actor: permitted_params['actor'] }.compact_blank
-
-    movies = Movie.select('movies.id, movies.movie, avg(reviews.stars)')
-                  .where(filter)
-                  .paginate(page: params[:page])
-                  .joins(:reviews)
-                  .group('movies.id, movies.movie')
-                  .order('avg(reviews.stars) desc')
+    movies = ::Movie::Get.new.call(
+      actor: permitted_params['actor']
+    )
 
     render json: { movies: }, status: 200
   end

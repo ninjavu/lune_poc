@@ -32,3 +32,5 @@ end
 gem 'factory_bot_rails'
 
 gem "will_paginate", "~> 4.0"
+
+gem "pg_search", "~> 2.3"

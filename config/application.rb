@@ -8,5 +8,6 @@ module EmpTechTask
   class Application < Rails::Application
     config.load_defaults 7.0
     config.autoload_paths += %W(#{config.root}/lib/)
+    config.active_record.schema_format = :sql
   end
 end
