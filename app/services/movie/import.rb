@@ -3,7 +3,7 @@
 require 'csv'
 
 class Movie::Import
-  # [TODO] I can process in batch and also use alphabetical sort in order to scale.
+  # [TODO] I can process in batch and also use alphabetical sort in order to scale, currently it still uses a lot of RAM, no case for Big Data.
   
   def call(file_name: '')
     movies_csv = "#{Rails.root}/lib/movies.csv"
