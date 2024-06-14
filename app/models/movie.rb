@@ -7,14 +7,14 @@ class Movie < ApplicationRecord
     against: :actor,
     using: {
       tsearch: {
-        dictionary: "english",
-        tsvector_column: "tsv"
+        dictionary: 'english',
+        tsvector_column: 'tsv'
       }
     }
   )
-  
+
   self.per_page = 10
-  
+
   has_many :reviews, dependent: :destroy
 
   validates :movie, uniqueness: true
